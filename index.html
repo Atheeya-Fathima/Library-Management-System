@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="left-section">
+      <label for="menu-toggle" class="menu-icon">☰</label>
+      <h1>📖 Library Management System</h1>
+    </div>
+    <nav>
+      <a href="#loginModal">Login</a>
+      <a href="#signupModal">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Hidden checkbox to control sidebar -->
+  <input type="checkbox" id="menu-toggle" hidden>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#" class="active">🏠 Home</a></li>
+      <li><a href="#">📚 Books</a></li>
+      <li><a href="#">🛠️ Administration</a></li>
+      <li><a href="#">📜 History</a></li>
+      <li><a href="#">🔔 Notifications</a></li>
+      <li><a href="#">🎁 Gifts</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <main>
+    <div class="overlay-text">
+      <h2>“Unlock Knowledge, One Book at a Time 📚”</h2>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>📍 123 Knowledge Avenue, Colombo, Sri Lanka</p>
+    <p>📞 +94 77 123 4567 | ✉️ library@mysystem.com</p>
+  </footer>
+
+  <!-- LOGIN Modal -->
+  <div id="loginModal" class="modal">
+    <a class="modal-overlay" href="#"></a>
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h3>Login</h3>
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- SIGNUP Modal -->
+  <div id="signupModal" class="modal">
+    <a class="modal-overlay" href="#"></a>
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <h3>Sign Up</h3>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button>Sign Up</button>
+    </div>
+  </div>
+</body>
+</html>

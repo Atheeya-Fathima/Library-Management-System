@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: #004d99;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  position: relative;
+  z-index: 20;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-icon {
+  font-size: 1.6em;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.menu-icon:hover {
+  color: #ffeb3b;
+}
+
+header h1 {
+  font-size: 1.2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-left: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: white;
+  color: #004d99;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background: #003366;
+  color: white;
+  padding-top: 60px;
+  transition: 0.3s ease-in-out;
+  z-index: 15;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #0059b3;
+  border-left: 5px solid white;
+}
+
+/* Sidebar toggle logic */
+#menu-toggle:checked ~ .sidebar {
+  left: 0;
+}
+
+/* When sidebar opens, push main slightly */
+#menu-toggle:checked ~ main {
+  margin-left: 220px;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg") no-repeat center center/cover;
+  min-height: 80vh;
+  transition: margin-left 0.3s;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.overlay-text {
+  position: relative;
+  z-index: 1;
+}
+
+.overlay-text h2 {
+  font-size: 2em;
+  color: #004d99;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+}
+
+/* MODALS */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* very high, above sidebar and header */
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  z-index: 1000; /* above overlay */
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #004d99;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: #004d99;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #003366;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #666;
+}
+
+.close:hover {
+  color: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .overlay-text h2 {
+    font-size: 1.4em;
+  }
+}
